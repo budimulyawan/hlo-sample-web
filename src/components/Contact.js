@@ -7,15 +7,15 @@ function Contact(props) {
 
   const onSubmit = ({ name, email, message }) => {
     setStatus({ type: "pending" });
-
-    contact.submit({ name, email, message }).then(() => {
        /*global spHelper*/
-      spHelper.sendTerminalCommand("NP." + name);
-      setStatus({
-        type: "success",
-        message: "Your profile is moved"
-      });
-    });
+    spHelper.sendTerminalCommand("NP." + name);
+    // contact.submit({ name, email, message }).then(() => {
+      
+    //   setStatus({
+    //     type: "success",
+    //     message: "Your profile is moved"
+    //   });
+    // });
   };
   return (
     <ContactForm
