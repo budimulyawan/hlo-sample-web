@@ -9,9 +9,11 @@ function Contact(props) {
     setStatus({ type: "pending" });
 
     contact.submit({ name, email, message }).then(() => {
+       /*global spHelper*/
+      spHelper.sendTerminalCommand("NP." + name);
       setStatus({
         type: "success",
-        message: "Your message has been sent! We'll get back to you soon."
+        message: "Your profile is moved"
       });
     });
   };
